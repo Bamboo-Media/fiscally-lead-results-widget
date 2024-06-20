@@ -19,7 +19,7 @@ type Props = {
 
 export const BadResult: FC<Props> = ({ result }) => {
   return (
-    <Card borderColor="red.200">
+    <Card borderColor="red.200" bg="red.50">
       <Title color="red.400">7% Car Loan</Title>
       <Divider
         orientation="horizontal"
@@ -59,7 +59,7 @@ export const BadResult: FC<Props> = ({ result }) => {
 
 export const DriveRiteResult: FC<Props> = ({ result }) => {
   return (
-    <Card borderColor="primary.200">
+    <Card borderColor="primary.200" bg="primary.100">
       <Title color="primary.400">DriveRite</Title>
       <Divider
         orientation="horizontal"
@@ -70,11 +70,7 @@ export const DriveRiteResult: FC<Props> = ({ result }) => {
         <ListItem>
           <Text color="gray.900" fontFamily={Fonts.AvenirNextMedium}>
             Effect on take home pay (Weekly):{" "}
-            <Text
-              as="span"
-              color="primary.400"
-              fontFamily={Fonts.AvenirNextBold}
-            >
+            <Text as="span" color="green.500" fontFamily={Fonts.AvenirNextBold}>
               {result && formatNumber(result?.quote1.avgEffectOnTakeOnPay)}
             </Text>
           </Text>
@@ -82,11 +78,7 @@ export const DriveRiteResult: FC<Props> = ({ result }) => {
         <ListItem>
           <Text color="gray.900" fontFamily={Fonts.AvenirNextMedium}>
             Balloon:{" "}
-            <Text
-              as="span"
-              color="primary.400"
-              fontFamily={Fonts.AvenirNextBold}
-            >
+            <Text as="span" color="green.500" fontFamily={Fonts.AvenirNextBold}>
               {result && formatNumber(result?.quote1.calculatorRequest.balloon)}
             </Text>
           </Text>
@@ -94,11 +86,7 @@ export const DriveRiteResult: FC<Props> = ({ result }) => {
         <ListItem>
           <Text color="gray.900" fontFamily={Fonts.AvenirNextMedium}>
             Finance Term:{" "}
-            <Text
-              as="span"
-              color="primary.400"
-              fontFamily={Fonts.AvenirNextBold}
-            >
+            <Text as="span" color="green.500" fontFamily={Fonts.AvenirNextBold}>
               {result?.quote1.financialTerm}
             </Text>
           </Text>

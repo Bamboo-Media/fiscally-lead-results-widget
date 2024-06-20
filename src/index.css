@@ -17,3 +17,7 @@ a {
   box-sizing: border-box;
   outline: none;
 }
+
+.plyr {
+  height: 100% !important;
+}
