@@ -70,11 +70,14 @@ function App() {
       ],
     },
     options: {
-      autoplay: false,
-      clickToPlay: true,
+      autoplay: true,
+      muted: false,
+      enabled: true,
+
       quality: {
         default: 720,
         options: [720],
+        forced: false,
       },
     },
   };
