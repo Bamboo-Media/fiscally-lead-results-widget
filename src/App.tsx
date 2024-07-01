@@ -55,6 +55,7 @@ function App() {
   const params = new URL(document.location.toString()).searchParams;
   const searchParams = new URLSearchParams(params);
   const response_id = searchParams.get("response_id");
+  const form_id = searchParams.get("form_id");
 
   const plyrProps: PlyrProps = {
     source: {
@@ -86,12 +87,16 @@ function App() {
   const [error, setError] = useState<unknown | null>(null);
 
   useEffect(() => {
-    if (!response_id) return;
+    if (!response_id || !form_id) return;
 
     (async () => {
       try {
         await fetch(
-          `https://vvgtxmtfjgnsjsywzdxh.supabase.co/functions/v1/quote-result/${response_id}`
+          `${
+            import.meta.env.PROD
+              ? "https://vvgtxmtfjgnsjsywzdxh.supabase.co"
+              : "http://127.0.0.1:54321"
+          }/functions/v1/quote-result/${form_id}/${response_id}`
         )
           .then((res) => res.json())
           .then(setResult);
@@ -100,9 +105,9 @@ function App() {
         setError(error);
       }
     })();
-  }, [response_id]);
+  }, [form_id, response_id]);
 
-  if (!response_id) {
+  if (!response_id || !form_id) {
     return null;
   }
 
