@@ -72,7 +72,7 @@ function App() {
     },
     options: {
       autoplay: true,
-      muted: false,
+      muted: true,
       enabled: true,
 
       quality: {
