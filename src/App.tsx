@@ -192,11 +192,11 @@ function App() {
             </Heading>
             <Box
               width="full"
-              minHeight="500px"
+              maxHeight="80vh"
               borderRadius="16px"
               overflow="hidden"
             >
-              <Plyr {...plyrProps} />
+              <Plyr {...plyrProps} style={{ maxHeight: "80vh" }} />
             </Box>
           </VStack>
         </SimpleGrid>
